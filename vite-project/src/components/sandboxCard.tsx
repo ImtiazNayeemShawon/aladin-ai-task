@@ -1,6 +1,15 @@
 import { Link } from "react-router-dom";
 
-export default function sandboxCard({ sandbox }: { sandbox: any }) {
+interface Sandbox {
+  id: string;
+  title: string;
+  description: string;
+  tags: string[];
+  createdAt: string;
+  updatedAt: string;
+}
+
+export default function sandboxCard({ sandbox }: { sandbox: Sandbox }) {
     return (
         <div>
             <div className="w-full max-w-xl bg-zinc-900 shadow-lg rounded-2xl p-5 ">
@@ -12,7 +21,7 @@ export default function sandboxCard({ sandbox }: { sandbox: any }) {
 
                 {/* Tags */}
                 <div className="flex flex-wrap gap-2 mb-4">
-                    {sandbox.tags.map((tag, idx) => (
+                    {sandbox.tags.map((tag: string, idx: number) => (
                         <span
                             key={idx}
                             className="px-2 py-1 text-xs font-medium bg-gray-400 text-gray-100 rounded-md"
