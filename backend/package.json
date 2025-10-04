@@ -1,7 +1,8 @@
 {
   "name": "aladin-ai-task",
   "scripts": {
-    "dev": "bun run --hot src/index.ts"
+    "dev": "bun run --hot src/index.ts",
+    "start": "bun run src/index.ts"
   },
   "dependencies": {
     "@codesandbox/sdk": "^2.3.0",
