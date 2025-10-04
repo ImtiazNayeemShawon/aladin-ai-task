@@ -1,0 +1,13 @@
+{
+  "name": "aladin-ai-task",
+  "scripts": {
+    "dev": "bun run --hot src/index.ts"
+  },
+  "dependencies": {
+    "@codesandbox/sdk": "^2.3.0",
+    "hono": "^4.9.9"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  }
+}

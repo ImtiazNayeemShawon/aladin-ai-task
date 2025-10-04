@@ -1,0 +1,15 @@
+./my-template 
+my-template
+
+./vite-project/node_modules
+vite-project/node_modules
+
+./vite-project/dist
+vite-project/dist
+
+./vite-project/dist-ssr
+vite-project/dist-ssr
+
+./vite-project/build
+
+./bac
