@@ -20,9 +20,7 @@ const Clientversion = () => {
       <div style={{ height: "30vh", backgroundColor: "#111" }}>
         <SandpackConsole
           showHeader
-          showSyntaxHighlighting
-          autoCorrect
-          showLineNumbers
+          
           showRestartButton
           style={{ height: "100%", color: "white" }}
         />

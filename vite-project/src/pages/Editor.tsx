@@ -11,7 +11,6 @@ export default function Editor() {
   const [preview, setPreview] = useState<any>(null);
   const previewContainerRef = useRef<HTMLDivElement>(null);
   const editorUrl = `https://codesandbox.io/p/sandbox/4jyr6m?embed=1`;
-  const previewUrl = `https://${sandboxId}.csb.app/`;
 
   //  initial session
   useEffect(() => {
