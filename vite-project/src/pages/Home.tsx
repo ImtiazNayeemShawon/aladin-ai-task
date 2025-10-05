@@ -1,3 +1,4 @@
+import CreateSandboxForm from '../components/form'
 import SandboxCard from '../components/sandboxCard'
 import api from '../lib/api'
 import { useState, useEffect } from 'react'
@@ -14,8 +15,17 @@ export default function App() {
   }, [])
 
 
+
   return (
     <div>
+      <dialog id="my_modal_2" className="modal">
+        <div className="modal-box">
+          <CreateSandboxForm/>
+        </div>
+        <form method="dialog" className="modal-backdrop">
+          <button>close</button>
+        </form>
+      </dialog>
       <div className="m-10">
         <svg
           className="feather feather-codesandbox"
@@ -42,7 +52,8 @@ export default function App() {
           <div className="space-y-6">
             <h1 className="text-6xl font-bold">Faster,Cleaner,Easier</h1>
             <p className="">Create a new sandbox in seconds with our easy-to-use interface. No coding required.</p>
-            <button className="border cursor-pointer px-10 py-2 rounded-xl bg-amber-50 text-black font-">Create a Sandbox</button>
+            <button className="btn border cursor-pointer px-10 py-2 rounded-xl bg-amber-50 text-black font-" onClick={() => document.getElementById('my_modal_2').showModal()}>Create a Sandbox</button>
+
           </div>
           <div>
           </div>

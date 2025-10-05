@@ -3,6 +3,8 @@
 
 /* ✅ Tailwind must come after font imports */
 @import "tailwindcss";
+@plugin "daisyui";
+
 
 @layer base {
   html {
