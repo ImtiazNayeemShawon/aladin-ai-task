@@ -4,8 +4,8 @@ import { cors } from 'hono/cors'
 const app = new Hono()
 const sdk = new CodeSandbox();
 app.use(cors({
-  origin: ['https://regal-caramel-0a8390.netlify.app/', "*","https://aladin-ai-task.appwrite.network/"]
-}))
+  origin: ['https://regal-caramel-0a8390.netlify.app/', "*", "https://aladin-ai-task.appwrite.network/", "http://localhost:5173"]
+}));
 
 app.get('/', async (c) => {
   return c.text('Hello World')
@@ -15,20 +15,24 @@ app.get('/', async (c) => {
 app.post('/create', async (c) => {
   try {
     const body = await c.req.json().catch(() => ({}));
+    console.log(body);
 
     const sandbox = await sdk.sandboxes.create({
-      id: 'pt_UAK1CM7xJ2Wi4UGs4dufjy', // This should be a template ID for blank project
-      title: body.title || 'New Sandbox',
-      description: body.description || 'Blank sandbox environment',
-      tags: body.tags || ['blank'],
+      id: body.template,
+      title: body.sandboxName || 'New Sandbox',
+      description: body.sandboxDescription || 'Blank sandbox environment',
+      tags: body.sandboxTags || ['blank'],
       privacy: 'public-hosts',
       vmTier: VMTier.Micro,
       hibernationTimeoutSeconds: 300,
+      
       automaticWakeupConfig: {
         http: true,
         websocket: false
+        
       }
     });
+    console.log(sandbox);
 
     return c.json({
       success: true,
