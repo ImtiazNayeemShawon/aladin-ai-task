@@ -1,10 +1,17 @@
-@import "tailwindcss";
+/* ✅ Always put @import at the top */
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
 
+/* ✅ Tailwind must come after font imports */
+@import "tailwindcss";
 
-body {
-  background-color: #0d0d0f;
-  color: #f4f4f5;
-  font-family: "Source Code Pro", monospace;
-  font-optical-sizing: auto;
+@layer base {
+  html {
+    font-family: "Source Code Pro", monospace;
+  }
+
+  body {
+    background-color: #0d0d0f;
+    color: #f4f4f5;
+    font-optical-sizing: auto;
+  }
 }
