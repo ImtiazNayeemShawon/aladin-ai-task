@@ -4,7 +4,7 @@ import { cors } from 'hono/cors'
 const app = new Hono()
 const sdk = new CodeSandbox();
 app.use(cors({
-  origin: ['https://regal-caramel-0a8390.netlify.app/', "*"]
+  origin: ['https://regal-caramel-0a8390.netlify.app/', "*","https://aladin-ai-task.appwrite.network/"]
 }))
 
 app.get('/', async (c) => {
